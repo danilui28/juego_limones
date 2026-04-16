@@ -105,3 +105,13 @@ function aparecerLimon(){
     limonY = 0;
     actualizarPantalla();
 }
+
+function reiniciar(){
+    clearInterval(intervalo);
+    actualizarPantalla();
+    vidas = 3
+    puntaje = 0
+    mostrarEnSpan("txtVidas",vidas)
+    mostrarEnSpan("txtPuntaje",puntaje)
+    iniciar()
+}
