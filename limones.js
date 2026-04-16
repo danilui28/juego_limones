@@ -111,6 +111,7 @@ function reiniciar(){
     actualizarPantalla();
     vidas = 3
     puntaje = 0
+    velocidadCaida = 200;
     mostrarEnSpan("txtVidas",vidas)
     mostrarEnSpan("txtPuntaje",puntaje)
     iniciar()
