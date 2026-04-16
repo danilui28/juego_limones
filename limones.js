@@ -13,7 +13,7 @@ let limonX = canvas.width/2;
 let limonY = 5;
 let puntaje = 0;
 let vidas = 3;
-let velocidadCaida = 100;
+let velocidadCaida = 200;
 
 function iniciar(){
     setInterval(bajarLimon,velocidadCaida)
@@ -73,6 +73,15 @@ function detectarColision(){
     aparecerLimon();
     puntaje = puntaje + 1
     mostrarEnSpan("txtPuntaje",puntaje)
+    if (puntaje == 3){
+        velocidadCaida = 150;
+    } 
+    else if (puntaje == 6){
+        velocidadCaida = 100;
+    } 
+    else if (puntaje == 10){
+        alert("puedes hacer limonada con lo que recolectastes")
+    }
     }
 }
 
