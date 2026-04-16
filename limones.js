@@ -11,6 +11,8 @@ const alturaLimon = 20;
 const anchoLimon = 20;
 let limonX = canvas.width/2;
 let limonY = 5;
+let puntaje = 0;
+let vidas = 3;
 
 function iniciar(){
     dibujarSuelo();
@@ -58,6 +60,7 @@ function bajarLimon(){
     limonY = limonY + 10;
     actualizarPantalla()
     detectarColision()
+    detectarPiso()
 }
 
 function detectarColision(){
@@ -66,6 +69,16 @@ function detectarColision(){
     limonY + alturaLimon > personajeY &&
     limonY < personajeY + alturaPersonaje){
     aparecerLimon();
+    puntaje = puntaje + 1
+    mostrarEnSpan("txtPuntaje",puntaje)
+    }
+}
+
+function detectarPiso(){
+    if(limonY + alturaLimon == canvas.height-alturaLimon){
+        aparecerLimon();
+        vidas=vidas-1;
+        mostrarEnSpan("txtVidas",vidas)
     }
 }
 
