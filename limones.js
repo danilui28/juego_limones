@@ -14,9 +14,10 @@ let limonY = 5;
 let puntaje = 0;
 let vidas = 3;
 let velocidadCaida = 200;
+let intervalo;
 
 function iniciar(){
-    setInterval(bajarLimon,velocidadCaida)
+    intervalo = setInterval(bajarLimon,velocidadCaida)
     dibujarSuelo();
     dibujarPersonaje();
     aparecerLimon();
@@ -81,6 +82,7 @@ function detectarColision(){
     } 
     else if (puntaje == 10){
         alert("puedes hacer limonada con lo que recolectastes")
+        clearInterval(intervalo);
     }
     }
 }
@@ -94,6 +96,7 @@ function detectarPiso(){
 
     if(vidas == 0){
         alert("GAME OVER")
+        clearInterval(intervalo);
     }
 }
 
